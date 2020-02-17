@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="../css/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="../js/register.js"></script>
+    <title>Registration Page</title>
+</head>
+<style>
+    body, html {
+        height: 100%;
+        font-family: "Inconsolata", sans-serif;
+    }
+
+    .bgimg {
+        background-position: center;
+        background-size: cover;
+        background-image: url("../images/streetart2.jpg");
+        min-height: 75%;
+    }
+
+    .menu {
+        display: none;
+    }
+</style>
+<body>
+
+<!-- Links (sit on top) -->
+<div class="w3-top">
+    <div class="w3-row w3-padding w3-black">
+        <div class="w3-col s3">
+            <a href="#" class="w3-button w3-block w3-black">HOME</a>
+        </div>
+        <div class="w3-col s3">
+            <a href="#registration" class="w3-button w3-block w3-black">Registration</a>
+        </div>
+        <div class="w3-col s4 w3-right">
+            <form method="POST" id="registrationLogin"> <!-- convert to action_page?? -->
+                <div>
+                    <p><input type="email" placeholder="Email" name="username" id="emailLogin" required="required"></p>
+                </div>
+                <div>
+                    <p><input type="password" placeholder="Password" name="password" id="passwordLogin" required="required"></p>
+                </div>
+                <div>
+                    <p><input type="hidden" name="form" value="login"></p>
+                </div>
+                <a href="javascript:void(0);" class="btn btn-success"
+                   role="button" onclick="ajaxSubmitFormLogin();">
+                    Login
+                </a>
+                <input type="reset" value="Reset"
+                       class="btn btn-info"/>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- Header with image -->
+<header class="bgimg w3-display-container w3-grayscale-min" id="home">
+
+    <div class="w3-display-middle w3-center">
+        <span class="w3-text-white" style="font-size:90px">Birds and the Bees<br></span>
+    </div>
+    <div class="w3-display-bottomright w3-center w3-padding-large">
+        <span class="w3-text-white">Mustache</span>
+    </div>
+</header>
+
+<!-- Add a background color and large text to the whole page -->
+<div class="w3-sand w3-grayscale w3-large">
+
+    <!-- Registration -->
+    <div class="w3-container" id="registration" style="padding-bottom:32px;">
+        <div class="w3-content" style="max-width:700px">
+            <h5 class="w3-center w3-padding-48"><span class="w3-tag w3-wide">Registration</span></h5>
+            <form method="POST" id="registrationForm">
+                <div>
+                    <p><input class="w3-input w3-padding-16 w3-border" type="email" placeholder="Email" id="Email" name="username" required="required"></p>
+                </div>
+                <div>
+                    <p><input class="w3-input w3-padding-16 w3-border" type="password" placeholder="password" id="password" name="password" required="required"></p>
+                </div>
+                <div>
+                    <p><input type="hidden" name="form" value="registration"></p>
+                </div>
+                <a href="javascript:void(0);" class="btn btn-success"
+                   role="button" onclick="ajaxSubmitForm();">
+                    Register
+                </a>
+                <input type="reset" value="Reset"
+                       class="btn btn-info"/>
+
+
+            </form>
+        </div>
+    </div>
+    <!-- End page content -->
+</div>
+<p id="msg"></p>
+
+<!-- Footer -->
+<footer class="w3-center w3-light-grey w3-padding-48 w3-large">
+    <p>Powered by <a href="https://www.youtube.com/watch?v=YAZpjWZRNAc" title="W3.CSS" target="_blank" class="w3-hover-text-green">Old Toby ~ Southfarthing</a></p>
+</footer>
+
+<script>
+    // Tabbed Menu
+    function openMenu(evt, menuName) {
+        var i, x, tablinks;
+        x = document.getElementsByClassName("menu");
+        for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablink");
+        for (i = 0; i < x.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" w3-dark-grey", "");
+        }
+        document.getElementById(menuName).style.display = "block";
+        evt.currentTarget.firstElementChild.className += " w3-dark-grey";
+    }
+    //document.getElementById("myLink").click();
+</script>
+
+</body>
+</html>
